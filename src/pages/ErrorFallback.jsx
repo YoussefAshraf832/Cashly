@@ -186,6 +186,7 @@ const TipBox = styled.div`
 `;
 
 function ErrorFallback({ error, resetErrorBoundary }) {
+  console.log(error);
   const handleGoHome = () => {
     resetErrorBoundary();
     window.location.replace("/");
