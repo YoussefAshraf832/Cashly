@@ -370,7 +370,6 @@ function MenuList() {
     return { id: branch?._id, name: branch?.name };
   });
 
-  console.log(branchss);
   //  [
   //   { id: "branch-1", name: "الفرع الرئيسي - القاهرة" },
   //   { id: "branch-2", name: "فرع الجيزة" },
@@ -443,7 +442,10 @@ function MenuList() {
                 <ProductCode>
                   عدد:{" "}
                   {product?.quantityInBranch?.find((branch) => {
-                    return branch.branch._id === selectedBranch;
+                    return (
+                      branch.branch._id === selectedBranch ||
+                      branch.branch._id === userLogin?.user?.branch?._id
+                    );
                   })?.quantity || 0}
                 </ProductCode>
                 <ProductPrice>{product.price} ريال</ProductPrice>
