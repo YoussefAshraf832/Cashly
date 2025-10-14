@@ -202,7 +202,7 @@ function IncomesTables({ invoices, isLoading }) {
       (prod) => product?.product?._id === prod?.product?._id
     );
     if (existingProduct) {
-      existingProduct?.quantity += product?.quantity;
+      existingProduct.quantity += product?.quantity;
       return acc;
     } else return [...acc, { ...product }];
   }, []);
