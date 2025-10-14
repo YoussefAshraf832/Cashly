@@ -261,7 +261,7 @@ const PaymentConfirmationModal = ({ show, onClose, totalAmount }) => {
             <AmountInfo>
               <AmountRow>
                 <span>المبلغ المدفوع:</span>
-                <span>{parseFloat(cashAmount).toLocaleString()} ر.س</span>
+                <span>{parseFloat(cashAmount)?.toLocaleString()} ر.س</span>
               </AmountRow>
               <AmountRow>
                 <span>المبلغ المتبقي:</span>
@@ -300,7 +300,7 @@ const PaymentConfirmationModal = ({ show, onClose, totalAmount }) => {
             <AmountInfo>
               <AmountRow>
                 <span>المبلغ المستحق:</span>
-                <span>{totalAmount.toLocaleString()} ر.س</span>
+                <span>{totalAmount?.toLocaleString()} ر.س</span>
               </AmountRow>
             </AmountInfo>
           )}

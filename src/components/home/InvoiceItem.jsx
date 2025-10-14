@@ -32,9 +32,9 @@ function InvoiceItem({ item }) {
 
   useEffect(
     function () {
-      setQuantity(() => Number(item.quantity));
+      setQuantity(() => Number(item?.quantity));
     },
-    [item.quantity]
+    [item?.quantity]
   );
 
   if (+quantity < 0) setQuantity(0);
@@ -42,7 +42,7 @@ function InvoiceItem({ item }) {
   return (
     <StyledInvoiceItem>
       <div>
-        <div>{item.name}</div>
+        <div>{item?.name}</div>
         <div
           style={{
             fontSize: "0.8rem",
@@ -53,7 +53,7 @@ function InvoiceItem({ item }) {
         >
           <button
             onClick={() => {
-              updateQuantity(item.id, quantity - 1);
+              updateQuantity(item?.id, quantity - 1);
               setQuantity((x) => Number(x) - 1);
             }}
           >
@@ -66,7 +66,7 @@ function InvoiceItem({ item }) {
               setQuantity(+e.target.value);
 
               updateQuantity(
-                item.id,
+                item?.id,
                 e.target.value === "" ? 0 : +e.target.value
               );
             }}
@@ -74,14 +74,14 @@ function InvoiceItem({ item }) {
 
           <button
             onClick={() => {
-              updateQuantity(item.id, quantity + 1);
+              updateQuantity(item?.id, quantity + 1);
               setQuantity((x) => Number(x) + 1);
             }}
           >
             +
           </button>
           <button
-            onClick={() => removeFromInvoice(item.id)}
+            onClick={() => removeFromInvoice(item?.id)}
             style={{ color: "red", marginLeft: "8px" }}
           >
             حذف
@@ -96,7 +96,7 @@ function InvoiceItem({ item }) {
           justifyContent: "center",
         }}
       >
-        {Math.round(item.discount * quantity * 100) / 100}{" "}
+        {Math.round(item?.discount * quantity * 100) / 100}{" "}
         <span style={{ display: "block", margin: "auto" }}>خصم</span>
       </div>
 
@@ -107,7 +107,7 @@ function InvoiceItem({ item }) {
           justifyContent: "flex-end",
         }}
       >
-        {Math.round((item.price - item.discount) * quantity * 100) / 100}{" "}
+        {Math.round((item?.price - item?.discount) * quantity * 100) / 100}{" "}
         <span style={{ display: "block", margin: "auto" }}>ريال</span>
       </div>
     </StyledInvoiceItem>
