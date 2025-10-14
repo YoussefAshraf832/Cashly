@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import { useHomeContext } from "../context/HomeContext";
 import { useEffect } from "react";
-import Products from "../components/receivedProducts/products";
+import Products from "./../components/receivedProducts/products";
 
 const HomeContainer = styled.div`
   display: grid;
