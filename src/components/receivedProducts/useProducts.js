@@ -44,7 +44,7 @@ export const useProductReceiving = () => {
   // تحديث بيانات المنتج
   const updateProduct = (id, field, value) => {
     setProducts((prev) =>
-      prev.map((product) =>
+      prev?.map((product) =>
         product.id === id ? { ...product, [field]: value } : product
       )
     );
