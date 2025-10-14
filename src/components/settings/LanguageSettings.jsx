@@ -55,7 +55,7 @@ const LanguageSettings = () => {
   return (
     <Container>
       <div>
-        {languages.map((language) => (
+        {languages?.map((language) => (
           <LanguageOption
             key={language.value}
             selected={currentLanguage === language.value}

@@ -66,7 +66,7 @@ function ProductsManagement() {
 
   const updateProduct = (id, field, value) => {
     setProducts(
-      products.map((product) =>
+      products?.map((product) =>
         product.id === id ? { ...product, [field]: value } : product
       )
     );

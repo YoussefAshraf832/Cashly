@@ -263,7 +263,7 @@ function ExpensesTable({ cookies, userLogin, expenses }) {
         >
           الكل
         </FilterButton>
-        {expenseTypes.map((type) => (
+        {expenseTypes?.map((type) => (
           <FilterButton
             key={type}
             onClick={() => setFilter(type)}

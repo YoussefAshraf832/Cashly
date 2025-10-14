@@ -141,7 +141,7 @@ function ProductsTable({ products, onDeleteProduct, onUpdateProduct }) {
               </tr>
             </TableHead>
             <tbody>
-              {products.map((product) => (
+              {products?.map((product) => (
                 <ProductRow
                   key={product.id}
                   product={product}

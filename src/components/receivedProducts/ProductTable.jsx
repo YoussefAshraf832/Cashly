@@ -68,7 +68,7 @@ const ProductTable = ({ children, headerCells, tableBodyRef }) => {
   return (
     <TableContainer>
       <TableHeader>
-        {headerCells.map((cell, index) => (
+        {headerCells?.map((cell, index) => (
           <div key={index} className={cell.className || ""}>
             {cell.content}
           </div>

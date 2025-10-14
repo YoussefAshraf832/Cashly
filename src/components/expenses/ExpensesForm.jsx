@@ -162,7 +162,7 @@ function ExpensesForm() {
             required
           >
             <option value="">اختر نوع المصروف</option>
-            {expenseTypes.map((type) => (
+            {expenseTypes?.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>

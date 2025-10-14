@@ -202,7 +202,7 @@ function InvoiceSearch({ invoices }) {
                 </tr>
               </TableHead>
               <tbody>
-                {searchResult.products.map((item) => (
+                {searchResult.products?.map((item) => (
                   <TableRow key={item._id}>
                     <TableCell>{item.product.name}</TableCell>
                     <TableCell>{item.product.code}</TableCell>

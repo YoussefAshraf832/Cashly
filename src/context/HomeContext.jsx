@@ -127,7 +127,7 @@ function HomeContextProvider({ children }) {
 
     if (existingItem) {
       setInvoiceItems(
-        invoiceItems.map((item) =>
+        invoiceItems?.map((item) =>
           item.id === product.id
             ? {
                 ...item,
@@ -154,7 +154,7 @@ function HomeContextProvider({ children }) {
     }
 
     setInvoiceItems(
-      invoiceItems.map((item) =>
+      invoiceItems?.map((item) =>
         item.id === productId ? { ...item, quantity: newQuantity } : item
       )
     );

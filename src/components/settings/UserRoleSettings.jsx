@@ -309,7 +309,7 @@ const CustomDropdown = ({ options, value, onChange, placeholder, error }) => {
 
       {isOpen && (
         <DropdownList>
-          {options.map((option) => (
+          {options?.map((option) => (
             <DropdownItem
               key={option.value}
               onClick={() => handleSelect(option)}

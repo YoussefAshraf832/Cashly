@@ -58,7 +58,7 @@ const SummarySection = ({ statistics, actions, isLoading }) => {
       </StatsContainer>
 
       <ActionsContainer>
-        {actions.map((action, index) =>
+        {actions?.map((action, index) =>
           React.cloneElement(action, {
             key: index,
             disabled: action.props.disabled || isLoading,
