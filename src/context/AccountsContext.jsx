@@ -111,20 +111,20 @@ function AccountsContextProvider({ children }) {
   };
 
   // تصفية الفواتير حسب التاريخ
-  const filteredInvoices = invoices.filter(
+  const filteredInvoices = invoices?.filter(
     (invoice) => invoice.date === dateFilter
   );
-  const filteredExpenses = expenses.filter(
+  const filteredExpenses = expenses?.filter(
     (expense) => expense.date === dateFilter
   );
 
   // حساب الإجماليات
-  const totalSales = filteredInvoices.reduce(
-    (sum, invoice) => sum + invoice.total,
+  const totalSales = filteredInvoices?.reduce(
+    (sum, invoice) => sum + invoice?.total,
     0
   );
-  const totalExpenses = filteredExpenses.reduce(
-    (sum, expense) => sum + expense.amount,
+  const totalExpenses = filteredExpenses?.reduce(
+    (sum, expense) => sum + expense?.amount,
     0
   );
   const netAmount = totalSales - totalExpenses;

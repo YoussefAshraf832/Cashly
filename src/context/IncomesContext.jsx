@@ -107,24 +107,25 @@ function IncomesContextProvider({ children }) {
 
   // البحث عن فاتورة
   const searchInvoice = () => {
-    const result = invoices.find(
-      (invoice) => invoice.id.toLowerCase() === searchTerm.toLowerCase().trim()
+    const result = invoices?.find(
+      (invoice) =>
+        invoice?.id?.toLowerCase() === searchTerm.toLowerCase().trim()
     );
     setSearchResult(result || null);
   };
 
   // حساب إجمالي المبيعات
-  const totalSales = invoices.reduce((sum, invoice) => sum + invoice.total, 0);
+  const totalSales = invoices?.reduce((sum, invoice) => sum + invoice.total, 0);
 
   // حساب إجمالي المنتجات المباعة
-  const soldProducts = invoices.reduce((acc, invoice) => {
-    invoice.items.forEach((item) => {
-      const existingItem = acc.find((i) => i.id === item.id);
+  const soldProducts = invoices?.reduce((acc, invoice) => {
+    invoice?.items?.forEach((item) => {
+      const existingItem = acc?.find((i) => i.id === item.id);
       if (existingItem) {
         existingItem.quantity += item.quantity;
         existingItem.total += item.total;
       } else {
-        acc.push({ ...item });
+        acc?.push({ ...item });
       }
     });
     return acc;

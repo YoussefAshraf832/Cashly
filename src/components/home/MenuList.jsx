@@ -347,7 +347,7 @@ function MenuList() {
     return <PageSpinner style={{ left: "40%" }} />;
 
   const categorie = productsFiltered?.reduce((cur, acc) => {
-    if (cur.includes(acc?.filter2)) {
+    if (cur?.includes(acc?.filter2)) {
       return cur;
     } else {
       return [...cur, acc?.filter2];
@@ -362,6 +362,9 @@ function MenuList() {
         );
 
   // بيانات الفروع (يمكن جلبها من API أو context)
+  // const branches = branchs?.map((branch) => {
+  //   return { id: branch?._id, name: branch?.name };
+  // });
   const branches = branchs?.map((branch) => {
     return { id: branch?._id, name: branch?.name };
   });

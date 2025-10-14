@@ -106,16 +106,16 @@ export const useProductReceiving = () => {
 
   // حساب الإحصائيات
   const statistics = {
-    totalProducts: products.length,
+    totalProducts: products?.length,
     totalQuantity: products.reduce((sum, product) => {
-      return sum + (Number(product.quantity) || 0);
+      return sum + (Number(product?.quantity) || 0);
     }, 0),
-    validProducts: products.filter(
+    validProducts: products?.filter(
       (product) =>
-        product.code.trim() &&
+        product?.code?.trim() &&
         // product.name.trim() &&
-        Number(product.quantity) > 0
-    ).length,
+        Number(product?.quantity) > 0
+    )?.length,
   };
 
   return {

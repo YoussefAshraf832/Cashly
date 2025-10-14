@@ -157,7 +157,7 @@ function ProductRow({ product, onDelete, onUpdate }) {
       <TableCell>
         <Input
           type="text"
-          value={product.name}
+          value={product?.name}
           onChange={(e) => {
             // setName(e.target.value);
             handleInputChange("name", e.target.value);

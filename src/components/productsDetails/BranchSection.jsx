@@ -167,7 +167,7 @@ const BranchDropdown = ({
           aria-expanded={isOpen}
         >
           <SelectedBranch placeholder={!selectedBranch}>
-            {selectedBranch ? selectedBranch.name : placeholder}
+            {selectedBranch ? selectedBranch?.name : placeholder}
           </SelectedBranch>
           <DropdownArrow isOpen={isOpen}>▼</DropdownArrow>
         </DropdownButton>

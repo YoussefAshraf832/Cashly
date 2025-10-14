@@ -293,7 +293,7 @@ function DateRangeFilter({ isLoading }) {
   const queryClint = useQueryClient();
 
   const branches = branchs?.map((branch) => {
-    return { id: branch._id, name: branch.name };
+    return { id: branch?._id, name: branch?.name };
   });
 
   const handleDateChange = (field, value) => {

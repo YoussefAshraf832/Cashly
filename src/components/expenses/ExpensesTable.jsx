@@ -298,9 +298,9 @@ function ExpensesTable({ cookies, userLogin, expenses }) {
                         <TableCell>
                           {expense.totalPrice.toLocaleString()} ر.س
                         </TableCell>
-                        <TableCell>{expense.filter}</TableCell>
+                        <TableCell>{expense?.filter}</TableCell>
                         {["owner", "admin"].includes(userLogin?.user?.role) && (
-                          <TableCell>{expense.branch.name}</TableCell>
+                          <TableCell>{expense?.branch?.name}</TableCell>
                         )}
                         <TableCell>
                           {formatDateTime(expense.createdAt).date}

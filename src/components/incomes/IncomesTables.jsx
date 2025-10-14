@@ -198,11 +198,11 @@ function IncomesTables({ invoices, isLoading }) {
     .flat();
 
   const soldProducts = productsSolded?.reduce((acc, product) => {
-    const existingProduct = acc.find(
-      (prod) => product.product._id === prod.product._id
+    const existingProduct = acc?.find(
+      (prod) => product?.product?._id === prod?.product?._id
     );
     if (existingProduct) {
-      existingProduct.quantity += product.quantity;
+      existingProduct?.quantity += product?.quantity;
       return acc;
     } else return [...acc, { ...product }];
   }, []);
@@ -308,7 +308,7 @@ function IncomesTables({ invoices, isLoading }) {
                           </TableCell>
                           <TableCell>{invoice.createdBy.name}</TableCell>
                           <TableCell>
-                            {invoice.products.reduce(
+                            {invoice?.products?.reduce(
                               (sum, item) => sum + item.quantity,
                               0
                             )}

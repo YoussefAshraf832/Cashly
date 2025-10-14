@@ -90,17 +90,17 @@ function ExpensesContextProvider({ children }) {
 
   // حذف مصروف
   const handleDelete = (id) => {
-    setExpenses(expenses.filter((expense) => expense.id !== id));
+    setExpenses(expenses?.filter((expense) => expense.id !== id));
   };
 
   // تصفية المصروفات
   const filteredExpenses =
     filter === "all"
       ? expenses
-      : expenses.filter((expense) => expense.type === filter);
+      : expenses?.filter((expense) => expense.type === filter);
 
   // حساب الإجمالي
-  const totalAmount = filteredExpenses.reduce(
+  const totalAmount = filteredExpenses?.reduce(
     (sum, expense) => sum + expense.amount,
     0
   );
