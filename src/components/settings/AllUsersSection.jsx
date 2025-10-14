@@ -497,7 +497,7 @@ const AllUsersSection = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
 
   const branches = branchs
-    ? branchs.map((obj) => {
+    ? branchs?.map((obj) => {
         return { value: `${obj.name}`, label: `${obj.name}` };
       })
     : [

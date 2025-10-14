@@ -197,11 +197,11 @@ function Sidebar() {
 
   useEffect(
     function () {
-      if (idActive.id === "all") {
-        setActiveCategory(() => idActive.id);
+      if (idActive?.id === "all") {
+        setActiveCategory(() => idActive?.id);
       }
-      if (idActive.id !== "all") {
-        setActiveCategory(() => +idActive.id);
+      if (idActive?.id !== "all") {
+        setActiveCategory(() => +idActive?.id);
       }
     },
     [idActive, setActiveCategory]
