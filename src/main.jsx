@@ -7,16 +7,11 @@ import ErrorFallback from "./pages/ErrorFallback.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => window.location.replace("/")}
+    >
+      <App />
+    </ErrorBoundary>
   </StrictMode>
 );
-// createRoot(document.getElementById("root")).render(
-//   <StrictMode>
-//     <ErrorBoundary
-//       FallbackComponent={ErrorFallback}
-//       onReset={() => window.location.replace("/")}
-//     >
-//       <App />
-//     </ErrorBoundary>
-//   </StrictMode>
-// );
