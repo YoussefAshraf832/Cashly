@@ -22,6 +22,7 @@ function LoginProvider({ children }) {
       { value: "manager", label: "مدير" },
       { value: "accountant", label: "محاسب" },
       { value: "admin", label: "مدير عام" },
+      { value: "supervisor", label: "مشرف" },
     ],
 
     admin: [

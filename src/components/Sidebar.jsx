@@ -275,26 +275,41 @@ function Sidebar() {
               المصروفات
             </SidebarItem>
 
-            <SidebarItem
-              onClick={handleIncomesClick}
-              className={activeCategory === "incomes" ? "active" : ""}
-            >
-              المبيعات
-            </SidebarItem>
+            {["admin", "owner", "manager"].includes(userLogin?.user?.role) && (
+              <SidebarItem
+                onClick={handleIncomesClick}
+                className={activeCategory === "incomes" ? "active" : ""}
+              >
+                المبيعات
+              </SidebarItem>
+            )}
 
-            <SidebarItem
-              onClick={handleAccountsClick}
-              className={activeCategory === "accounts" ? "active" : ""}
-            >
-              الحسابات
-            </SidebarItem>
+            {["admin", "owner", "manager", "supervisor"].includes(
+              userLogin?.user?.role
+            ) && (
+              <SidebarItem
+                onClick={handleAccountsClick}
+                className={activeCategory === "accounts" ? "active" : ""}
+              >
+                الحسابات
+              </SidebarItem>
+            )}
 
-            <SidebarItem
-              onClick={handleProductsClick}
-              className={activeCategory === "products" ? "active" : ""}
-            >
-              استلام المنتجات
-            </SidebarItem>
+            {[
+              "admin",
+              "owner",
+              "manager",
+              "supervisor",
+              "user-received",
+              "received",
+            ].includes(userLogin?.user?.role) && (
+              <SidebarItem
+                onClick={handleProductsClick}
+                className={activeCategory === "products" ? "active" : ""}
+              >
+                استلام المنتجات
+              </SidebarItem>
+            )}
 
             {["admin", "owner", "manager-products"].includes(
               userLogin?.user?.role
@@ -309,12 +324,18 @@ function Sidebar() {
               </SidebarItem>
             )}
 
-            <SidebarItem
-              onClick={handleProductsDetailsClick}
-              className={activeCategory === "products_details" ? "active" : ""}
-            >
-              تفاصيل المنتجات
-            </SidebarItem>
+            {["admin", "owner", "manager", "supervisor"].includes(
+              userLogin?.user?.role
+            ) && (
+              <SidebarItem
+                onClick={handleProductsDetailsClick}
+                className={
+                  activeCategory === "products_details" ? "active" : ""
+                }
+              >
+                تفاصيل المنتجات
+              </SidebarItem>
+            )}
           </ul>
         </SidebarSection>
       </SidebarContent>
