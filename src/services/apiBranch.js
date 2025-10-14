@@ -30,7 +30,7 @@ export const createNewBranch = async function ({
 };
 
 export const getAllBranch = async function (cookies, userLogin) {
-  if (!["admin", "owner", "manager"].includes(userLogin.user.role)) return "";
+  if (!["admin", "owner", "manager"].includes(userLogin.user.role)) return [];
 
   const res =
     userLogin?.user.role === "manager"
