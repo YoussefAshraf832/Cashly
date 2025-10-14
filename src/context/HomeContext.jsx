@@ -118,9 +118,11 @@ function HomeContextProvider({ children }) {
   const [activeCategory, setActiveCategory] = useState(1);
 
   // إضافة منتج إلى الفاتورة
-  const addToInvoice = (product) => {
+  const addToInvoice = (product, user) => {
     const count = product?.quantityInBranch?.find(
-      (branch) => branch.branch._id === selectedBranch
+      (branch) =>
+        branch.branch._id === selectedBranch ||
+        branch.branch._id === user?.user?.branch?._id
     )?.quantity;
     if (count === 0 || !count) return;
     const existingItem = invoiceItems?.find((item) => item.id === product.id);

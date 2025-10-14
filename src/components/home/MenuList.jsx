@@ -436,7 +436,10 @@ function MenuList() {
 
           <ProductsGrid>
             {productsFiltered2?.map((product, i) => (
-              <ProductCard key={i} onClick={() => addToInvoice(product)}>
+              <ProductCard
+                key={i}
+                onClick={() => addToInvoice(product, userLogin)}
+              >
                 <ProductName>{product.name}</ProductName>
                 <ProductCode>كود: {product.code}</ProductCode>
                 <ProductCode>
