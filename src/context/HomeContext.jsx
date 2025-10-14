@@ -119,11 +119,11 @@ function HomeContextProvider({ children }) {
 
   // إضافة منتج إلى الفاتورة
   const addToInvoice = (product) => {
-    const count = product.quantityInBranch?.find(
+    const count = product?.quantityInBranch?.find(
       (branch) => branch.branch._id === selectedBranch
     )?.quantity;
     if (count === 0 || !count) return;
-    const existingItem = invoiceItems.find((item) => item.id === product.id);
+    const existingItem = invoiceItems?.find((item) => item.id === product.id);
 
     if (existingItem) {
       setInvoiceItems(
@@ -143,7 +143,7 @@ function HomeContextProvider({ children }) {
 
   // إزالة منتج من الفاتورة
   const removeFromInvoice = (productId) => {
-    setInvoiceItems(invoiceItems.filter((item) => item.id !== productId));
+    setInvoiceItems(invoiceItems?.filter((item) => item.id !== productId));
   };
 
   // تعديل كمية المنتج في الفاتورة
@@ -162,7 +162,7 @@ function HomeContextProvider({ children }) {
 
   // حساب الإجمالي
   const calculateTotal = () => {
-    return invoiceItems.reduce(
+    return invoiceItems?.reduce(
       (total, item) => total + (item.price - item.discount) * item.quantity,
       0
     );
@@ -170,7 +170,7 @@ function HomeContextProvider({ children }) {
 
   // إتمام عملية الشراء
   const completePurchase = () => {
-    if (invoiceItems.length === 0) return;
+    if (invoiceItems?.length === 0) return;
 
     setInvoiceItems([]);
   };
