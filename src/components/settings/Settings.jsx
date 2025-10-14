@@ -8,7 +8,7 @@ import UserPasswordSettings from "./UserPasswordSettings";
 import AllUsersSection from "./AllUsersSection";
 import BranchManagement from "./BranchManagement";
 import { useLoginContext } from "../../context/LoginContext";
-import { useOutsideClick } from "../../hooks/useOutsideClick";
+import { useOutsideClick } from "../../hooks/useOutSideClick";
 
 const SettingsContainer = styled.div`
   padding: ${({ theme }) => theme.spacing.lg};
