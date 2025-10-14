@@ -66,9 +66,9 @@ export const getAllBranch = async function (cookies, userLogin) {
   if (data.status === "fail" || data.status === "error")
     throw new Error(data.message);
 
-  if (userLogin?.user.role === "manager") return [data.data.data];
+  if (userLogin?.user.role === "manager") return [data?.data?.data];
 
-  return data.data.data;
+  return data?.data?.data;
 };
 
 export const updateBranch = async function ({ cookies, branchId, bodyObj }) {
