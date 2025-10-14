@@ -315,7 +315,7 @@ function MenuList() {
   );
   const {
     isLoading: isLoadingBranchs,
-    branchss,
+    branchs: branchss,
     error: errBranchs,
   } = useBranchs(cookies, userLogin);
 
@@ -369,6 +369,8 @@ function MenuList() {
   const branches = branchss?.map((branch) => {
     return { id: branch?._id, name: branch?.name };
   });
+
+  console.log(branchss);
   //  [
   //   { id: "branch-1", name: "الفرع الرئيسي - القاهرة" },
   //   { id: "branch-2", name: "فرع الجيزة" },
