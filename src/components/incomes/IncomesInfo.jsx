@@ -53,7 +53,7 @@ function IncomesInfo({ invoices, isLoading }) {
         {isLoading ? (
           <Spinner size="xlarge" />
         ) : (
-          <StatValue>{totalDiscount} ر.س</StatValue>
+          <StatValue>{totalDiscount || 0} ر.س</StatValue>
         )}
       </StatCard>
       <StatCard>
@@ -61,7 +61,7 @@ function IncomesInfo({ invoices, isLoading }) {
         {isLoading ? (
           <Spinner size="xlarge" />
         ) : (
-          <StatValue>{cash?.length}</StatValue>
+          <StatValue>{cash?.length || 0}</StatValue>
         )}
       </StatCard>
       <StatCard>
@@ -69,7 +69,7 @@ function IncomesInfo({ invoices, isLoading }) {
         {isLoading ? (
           <Spinner size="xlarge" />
         ) : (
-          <StatValue>{visa?.length}</StatValue>
+          <StatValue>{visa?.length || 0}</StatValue>
         )}
       </StatCard>
       <StatCard>

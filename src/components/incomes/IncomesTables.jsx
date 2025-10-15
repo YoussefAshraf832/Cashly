@@ -215,7 +215,7 @@ function IncomesTables({ invoices, isLoading }) {
         >
           <TableTitle>
             المنتجات المباعة (
-            {isLoading ? <Spinner size="small" /> : soldProducts?.length})
+            {isLoading ? <Spinner size="small" /> : soldProducts?.length || 0})
           </TableTitle>
           <ToggleButton>{isProductsTableOpen ? "▲" : "▼"}</ToggleButton>
         </TableHeader>
@@ -272,7 +272,7 @@ function IncomesTables({ invoices, isLoading }) {
             {isLoading ? (
               <Spinner size="small" />
             ) : (
-              invoices?.data?.data?.length
+              invoices?.data?.data?.length || 0
             )}
             )
           </TableTitle>

@@ -170,8 +170,9 @@ function AccountsConf({ expensesInvoicesActive, isLoading }) {
                   bodyObj: { expenses, invoices },
                 })
               }
+              disabled={isLoadingUpdate}
             >
-              نعم، تأكيد التسليم
+              {isLoadingUpdate ? <Spinner /> : "نعم، تأكيد التسليم"}
             </ButtonPrimary>
             <ButtonSecondary onClick={() => handleDelivery(false)}>
               إلغاء

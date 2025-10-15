@@ -242,7 +242,7 @@ const BranchDropdown = ({ value, onChange, branches }) => {
             ? selectedBranch.name
             : ["owner", "admin"].includes(userLogin?.user?.role)
             ? "كل الفروع"
-            : ""}
+            : `${userLogin?.user?.branch?.name}`}
         </span>
         <DropdownArrow isOpen={isOpen}>▼</DropdownArrow>
       </DropdownButton>
@@ -328,6 +328,7 @@ function DateRangeFilter({ isLoading }) {
                 type="date"
                 value={dateRange?.startDate}
                 onChange={(e) => handleDateChange("startDate", e.target.value)}
+                style={{ "margin-right": "-30px" }}
               />
             </DateGroup>
             <DateGroup>
@@ -337,6 +338,7 @@ function DateRangeFilter({ isLoading }) {
                 type="date"
                 value={dateRange?.endDate}
                 onChange={(e) => handleDateChange("endDate", e.target.value)}
+                style={{ "margin-right": "-30px" }}
               />
             </DateGroup>
           </DateRangeGroup>

@@ -524,7 +524,7 @@ const AllUsersSection = () => {
     } else {
       const filtered =
         users?.data?.data?.filter((user) => {
-          return user.branch.name === selectedBranch;
+          return user.branch?.name === selectedBranch;
         }) || [];
       setFilteredUsers(filtered);
     }

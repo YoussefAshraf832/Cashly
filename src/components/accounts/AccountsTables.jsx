@@ -215,6 +215,7 @@ function AccountsTables({ expensesInvoicesActive, isLoading }) {
                       <TableHeaderCell>كود الفاتورة</TableHeaderCell>
                       <TableHeaderCell>التاريخ</TableHeaderCell>
                       <TableHeaderCell>الوقت</TableHeaderCell>
+                      <TableHeaderCell>الطريقة</TableHeaderCell>
                       <TableHeaderCell>الفرع</TableHeaderCell>
                       <TableHeaderCell>الخصم</TableHeaderCell>
                       <TableHeaderCell>الإجمالي</TableHeaderCell>
@@ -230,6 +231,7 @@ function AccountsTables({ expensesInvoicesActive, isLoading }) {
                         <TableCell>
                           {formatDateTime(invoice.createdAt).time}
                         </TableCell>
+                        <TableCell>{invoice.paymentMethod}</TableCell>
                         <TableCell>{invoice.branch.name}</TableCell>
                         <TableCell>{invoice.totalDiscount} ر.س</TableCell>
                         <TableCell>{invoice.totalPrice} ر.س</TableCell>

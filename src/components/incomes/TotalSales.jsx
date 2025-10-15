@@ -38,7 +38,7 @@ function TotalSales({ invoices, isLoading }) {
         <TotalSalesValue>
           {invoices?.data?.data?.reduce((total, invoice) => {
             return total + invoice.totalPrice;
-          }, 0)}{" "}
+          }, 0) || 0}{" "}
           ر.س
         </TotalSalesValue>
       )}
