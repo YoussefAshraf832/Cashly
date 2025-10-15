@@ -1,7 +1,6 @@
 import { URL } from "../config";
 
 export const login = async function ({ emailOrPhone, password }) {
-  console.log(emailOrPhone, password, URL);
   const res = await fetch(`${URL}/users/login`, {
     method: "POST",
     headers: {

@@ -39,13 +39,6 @@ function InvoiceItem({ item }) {
 
   if (+quantity < 0) setQuantity(0);
 
-  console.log(
-    (item?.discount * quantity * 100) / 100,
-    quantity,
-    item?.discount,
-    item
-  );
-
   return (
     <StyledInvoiceItem>
       <div>

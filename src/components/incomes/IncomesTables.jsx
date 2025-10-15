@@ -207,6 +207,8 @@ function IncomesTables({ invoices, isLoading }) {
     } else return [...acc, { ...product }];
   }, []);
 
+  
+
   return (
     <>
       <CollapsibleTable open={isProductsTableOpen}>
