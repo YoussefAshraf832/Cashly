@@ -290,6 +290,7 @@ function IncomesTables({ invoices, isLoading }) {
                         <TableHeaderCell>رقم الفاتورة</TableHeaderCell>
                         <TableHeaderCell>التاريخ</TableHeaderCell>
                         <TableHeaderCell>الوقت</TableHeaderCell>
+                        <TableHeaderCell>الفرع</TableHeaderCell>
                         <TableHeaderCell>بواسطة</TableHeaderCell>
                         <TableHeaderCell>المنتجات</TableHeaderCell>
                         <TableHeaderCell>الخصم</TableHeaderCell>
@@ -306,6 +307,7 @@ function IncomesTables({ invoices, isLoading }) {
                           <TableCell>
                             {formatDateTime(invoice.createdAt).time}
                           </TableCell>
+                          <TableCell>{invoice.branch.name}</TableCell>
                           <TableCell>{invoice.createdBy.name}</TableCell>
                           <TableCell>
                             {invoice?.products?.reduce(
